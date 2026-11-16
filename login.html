@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connexion - Carnet de Route</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1><a href="index.html">Carnet de Route</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="login.html">Connexion</a></li>
+                    <li><a href="about.html">Mentions légales</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form action="admin.html" method="get">
+                <h2>Connexion à Carnet de voyage</h2>
+
+                <label for="identifiant">Identifiant :
+                    <div class="input-container">
+                        <img src="img/user.svg" alt="Icone user"/>
+                        <input type="text" id="identifiant" name="identifiant" placeholder="Entrez votre identifiant" required>
+                    </div>
+                </label>
+                <br>
+                <label for="mdp">Mot de passe :
+                    <div class="input-container">
+                        <img src="img/lock.svg" alt="Icone cadenas"/>
+                        <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required>
+                    </div>
+                </label>
+                <br>
+                <label for="rester-connecté">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="rester-connecté" name="rester-connecté">
+                        Rester connecté
+                    </div>
+                </label>
+                <button type="submit">Se connecter</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Carnet de Route - Tous droits réservés</p>
+            <p><a href="about.html">Mentions légales</a></p>
+        </footer>
+    </body>
+</html>

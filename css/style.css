@@ -1,0 +1,365 @@
+*, *:after, *:before {margin: 0;padding: 0;box-sizing: border-box}
+
+:root {
+    --couleur-fond: #f5f1ea;
+    --couleur-texte: #2b2b2b;
+    --couleur-principale: #1f3a4d;
+    --couleur-accent: #e9a23b;
+    --europe: #2f6fb0;
+    --europe-clair: #e6effa;
+    --asie: #c4452f;
+    --asie-clair: #fbe9e5;
+    --amerique: #3a8a4f;
+    --amerique-clair: #e7f4ea;
+    --oceanie: #7a4fa3;
+    --oceanie-clair: #f0e8f7;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- En-tête ---------- */
+
+header {
+    background-color: var(--couleur-principale);
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* 7. Ombre sur le titre principal */
+header h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header h1 a {
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    color: var(--couleur-accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--couleur-accent);
+}
+
+/* ---------- Contenu ---------- */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    flex: 1;
+}
+
+section {
+    margin-bottom: 48px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid;
+}
+
+article {
+    background-color: #fff;
+    border-left: 6px solid;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+article h3 {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+article .date {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 16px;
+}
+
+article img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+article p {
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+iframe {
+    border: 0;
+}
+
+/* ---------- Page d'accueil en FlexBox (index.html) ---------- */
+
+.accueil {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.articles article {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+/* ---------- Commentaires (index.html) ---------- */
+
+.commentaire {
+    max-width: none;
+    margin: auto 0 0;
+    padding: 16px 0 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    gap: 8px;
+}
+
+.commentaire label {
+    font-weight: 600;
+}
+
+textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 120px;
+    background-color: #fafafa;
+    resize: vertical;
+}
+
+.commentaire button {
+    align-self: flex-end;
+    padding: 10px 24px;
+}
+
+/* ---------- Couleurs par thème ---------- */
+
+.europe h2,
+.europe h3 {
+    color: var(--europe);
+}
+
+.europe article {
+    border-color: var(--europe);
+    background-color: var(--europe-clair);
+}
+
+.asie h2,
+.asie h3 {
+    color: var(--asie);
+}
+
+.asie article {
+    border-color: var(--asie);
+    background-color: var(--asie-clair);
+}
+
+.amerique h2,
+.amerique h3 {
+    color: var(--amerique);
+}
+
+.amerique article {
+    border-color: var(--amerique);
+    background-color: var(--amerique-clair);
+}
+
+.oceanie h2,
+.oceanie h3 {
+    color: var(--oceanie);
+}
+
+.oceanie article {
+    border-color: var(--oceanie);
+    background-color: var(--oceanie-clair);
+}
+
+/* ---------- Mentions légales (about.html) ---------- */
+
+.legal h2 {
+    color: var(--couleur-principale);
+}
+
+.legal section {
+    margin-bottom: 28px;
+}
+
+.legal h3 {
+    color: var(--couleur-principale);
+    margin-bottom: 8px;
+}
+
+.legal p {
+    text-align: justify;
+    margin-bottom: 8px;
+}
+
+.legal ul {
+    padding-left: 24px;
+}
+
+/* ---------- Formulaire (login.html) ---------- */
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 32px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input {
+    font-family: inherit;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+form h2 {
+    text-align: center;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container img {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.input-container input {
+    width: 100%;
+    padding-left: 40px;
+}   
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox-container input{
+    width: auto;
+    accent-color: var(--couleur-principale);
+}
+
+button {
+    font-family: inherit;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--couleur-principale);
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--couleur-accent);
+}
+
+/* ---------- Pied de page ---------- */
+
+footer {
+    background-color: var(--couleur-principale);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* ---------- Tableau  ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+caption {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--couleur-principale);
+    padding: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--couleur-principale);
+    color: #fff;
+    font-weight: 600;
+}
+
+
