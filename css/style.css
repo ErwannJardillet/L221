@@ -155,35 +155,6 @@ iframe {
     margin-bottom: 0;
 }
 
-/* Effet "carte qui flotte" au survol */
-.articles {
-    perspective: 1000px;
-}
-
-.articles article {
-    --rx: 0deg;
-    --ry: 0deg;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-style: preserve-3d;
-    will-change: transform;
-}
-
-/* Soulèvement au survol ; l'inclinaison (--rx / --ry) est calculée par js/tilt.js */
-.articles article:hover {
-    transform: translateY(-12px) rotateX(var(--rx)) rotateY(var(--ry));
-    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.25), 0 12px 12px -6px rgba(0, 0, 0, 0.15);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .articles article {
-        transition: none;
-    }
-
-    .articles article:hover {
-        transform: none;
-    }
-}
-
 /* ---------- Commentaires (index.html) ---------- */
 
 .commentaire {
@@ -390,5 +361,3 @@ th {
     color: #fff;
     font-weight: 600;
 }
-
-

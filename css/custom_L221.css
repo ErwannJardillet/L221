@@ -1,0 +1,98 @@
+/* Zoom des images au survol */
+article img {
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+article img:hover {
+    transform: scaleX(1.04) scaleY(1.04);
+}
+
+/*Déplacement des liens du menu */
+nav a {
+    display: inline-block;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+nav a:hover {
+    transform: translateY(-4px);
+}
+
+header h1 {
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+header h1:hover {
+    transform: translateY(-4px);
+}
+
+/*Déplacement des titres des continents */
+section h2 {
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+section h2:hover {
+    transform: translateX(10px);
+}
+
+/*Agrandissement des boutons */
+button {
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+button:hover {
+    transform: scaleX(1.1) scaleY(1.1);
+}
+
+button:active {
+    transform: scaleX(0.9) scaleY(0.9);
+}
+
+/*Animation des zones de commentaire */
+textarea {
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+textarea:focus {
+    transform: scaleX(1.01) scaleY(1.01);
+}
+
+/* Effet "carte qui flotte" au survol */
+.articles {
+    perspective: 1000px;
+}
+
+.articles article {
+    --rx: 0deg;
+    --ry: 0deg;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Soulèvement au survol ; l'inclinaison (--rx / --ry) est calculée par js/tilt.js */
+.articles article:hover {
+    transform: translateY(-12px) rotateX(var(--rx)) rotateY(var(--ry));
+    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.25), 0 12px 12px -6px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .articles article {
+        transition: none;
+    }
+
+    .articles article:hover {
+        transform: none;
+    }
+}
