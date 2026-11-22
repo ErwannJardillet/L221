@@ -69,22 +69,37 @@ textarea:focus {
 }
 
 /* Effet "carte qui flotte" au survol */
-.articles {
-    perspective: 1000px;
-}
-
 .articles article {
-    --rx: 0deg;
-    --ry: 0deg;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-style: preserve-3d;
-    will-change: transform;
 }
 
-/* Soulèvement au survol ; l'inclinaison (--rx / --ry) est calculée par js/tilt.js */
+/* 1. La carte se soulève (transition de 0.4s)
+   2. Une fois soulevée, elle oscille doucement en 3D (animation lancée après 0.4s) */
 .articles article:hover {
-    transform: translateY(-12px) rotateX(var(--rx)) rotateY(var(--ry));
+    transform: perspective(1000px) translateY(-12px);
     box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.25), 0 12px 12px -6px rgba(0, 0, 0, 0.15);
+    animation-name: carte-flotte-3d;
+    animation-delay: 0.4s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Petites rotations (2 à 3°) pour garder le texte lisible.
+   L'ombre se décale dans le sens inverse de l'inclinaison pour renforcer la profondeur. */
+@keyframes carte-flotte-3d {
+    0%, 50%, 100% {
+        transform: perspective(1000px) translateY(-12px) rotateX(0deg) rotateY(0deg);
+        box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.25), 0 12px 12px -6px rgba(0, 0, 0, 0.15);
+    }
+    25% {
+        transform: perspective(1000px) translateY(-15px) rotateX(2deg) rotateY(-3deg);
+        box-shadow: -8px 28px 32px -8px rgba(0, 0, 0, 0.25), -4px 14px 12px -6px rgba(0, 0, 0, 0.15);
+    }
+    75% {
+        transform: perspective(1000px) translateY(-15px) rotateX(-2deg) rotateY(3deg);
+        box-shadow: 8px 28px 32px -8px rgba(0, 0, 0, 0.25), 4px 14px 12px -6px rgba(0, 0, 0, 0.15);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -94,5 +109,6 @@ textarea:focus {
 
     .articles article:hover {
         transform: none;
+        animation: none;
     }
 }
