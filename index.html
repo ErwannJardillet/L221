@@ -144,6 +144,67 @@
                     </article>
                 </div>
             </section>
+
+            <section>
+                <form>
+                    <h2>Votre proposition</h2>
+                    
+                    <div class="input-container">
+                        <label for="identifiant">Identifiant :</label>
+                        <input type="text" id="identifiant" name="identifiant" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="titre">Titre de l'article :</label>
+                        <input type="text" id="titre" name="titre" required>
+                    </div>
+                
+                    <div class="input-container">
+                        <label for="destination">Destination :</label>
+                        <input type="text" id="destination" name="destination" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="continent">Continent :</label>
+                        <select id="continent" name="continent" required>
+                            <option value="europe">Europe</option>
+                            <option value="afrique">Afrique</option>
+                            <option value="asie">Asie</option>
+                            <option value="oceanie">Océanie</option>
+                            <option value="amerique">Amérique</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="budget">Budget :</label>
+                        <input type="text" id="budget" name="budget" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="periode">Période :</label>
+                        <input type="text" id="periode" name="periode" required>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="description">Description :</label>
+                        <textarea type="text" id="description" name="description" required></textarea>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="activite">Activité à faire :</label>
+                        <textarea type="text" id="activite" name="activite" required></textarea>
+                    </div>
+
+                    <div class="input-container">
+                        <legend>rgpd :</legend>
+                        <input type="checkbox" id="rgpd" name="rgpd" required>
+                        <label for="rgpd">J'accepte que mes données soient utilisées conformément à la politique de confidentialité</label>
+                    </div>                
+
+                    <button type="submit">Envoyer</button>
+
+                </form>
+            </section>
         </main>
 
         <footer>
